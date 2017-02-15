@@ -1,1 +1,67 @@
-<h1>Hello you</h1>
+<div class="splash">
+  <ul class="smoothies">
+    <li class="smoothies__item"><img src="img/avocado.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/chocolate-strawberry.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/frosted-coffee.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/green-apple.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/kiwi-banana.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/mango-banana.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/melon-mint.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/orange-carrot.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/rapsberry-banana.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/strawberry.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/vanilla.svg" alt=""></li>
+    <li class="smoothies__item"><img src="img/watermelon.svg" alt=""></li>
+  </ul>
+</div>
+
+
+<style>
+body {
+  margin: 0;
+}
+.splash {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: pink;
+}
+li.smoothies__item {
+    display: inline-block;
+    width: 100px;
+    list-style-type: none;
+    /*margin: 0 30px;*/
+    /*transform: translateX(-100%);*/
+    /*animation: slideRight 5s infinite;*/
+    transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
+}
+.smoothies__item.active {
+    transform: scale(1.5, 1.5);
+}
+li.smoothies__item:hover {
+    transform: scale(1.5, 1.5);
+    transition: all ease-in-out 200ms;
+}
+
+@keyframes slideRight {
+    from {transform: translateX(0);}
+    to {transform: translateX(999px);}
+}
+</style>
+
+<script type="text/javascript">
+const smoothies = document.querySelectorAll('.smoothies__item')
+smoothies.forEach(function(smoothie) {
+    smoothie.addEventListener('click', function() {
+      if(this.classList.contains('active')) {
+        this.classList.remove('active');
+      }
+      else {
+        document.querySelector('.smoothies__item').classList.remove('active');
+        this.classList.add('active')
+      }
+    })
+})
+</script>
