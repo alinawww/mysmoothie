@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+.splash {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: pink;
+    flex-direction: column;
+}
+li.smoothies__item {
+    display: inline-block;
+    width: 100px;
+    list-style-type: none;
+    /*margin: 0 30px;*/
+    /*transform: translateX(-100%);*/
+    /*animation: slideRight 5s infinite;*/
+    transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
+}
+.smoothies__item.active {
+    transform: scale(1.5, 1.5);
+}
+li.smoothies__item:hover {
+    transform: scale(1.5, 1.5);
+    transition: all ease-in-out 200ms;
+}
+
+@keyframes slideRight {
+    from {transform: translateX(0);}
+    to {transform: translateX(999px);}
+}
+
+
+.smoothie-button {
+    border: 0;
+    background: aquamarine;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.random-button {
+    width: 100%;
+    text-align: center;
+}
+.smoothie__image img {
+    border-radius: 50%;
+    max-width: 150px;
+
+}
+
+.smoothie {
+    display: flex;
+}
